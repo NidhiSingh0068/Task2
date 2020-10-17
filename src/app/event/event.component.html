@@ -1,0 +1,110 @@
+<div class="container-fluid">
+
+ 
+    <div class="row">
+
+      <!--Vertical navbar-->
+      <div class="col-sm-12">
+        <ul>
+          <li><a href="#corporate">Corporate Events</a></li>
+          <li><a href="#private">Private Events</a></li>
+          <li><a href="#public">Public Events</a></li>
+          <li><a href="#charity">Charity Events</a></li>
+        </ul>
+      </div>
+</div>
+</div>
+<br/>
+ 
+  <!--left side buttons-->
+  <div class="row">
+    <div class="col-sm-2">
+      <div class="center">
+        <br />
+        <button pButton pRipple type="button" label="Confirm" class="p-button-1"></button>
+        <br /><br />
+        <button pButton pRipple type="button" label="Offer" class="p-button-2"></button>
+        <br /><br /><br/>
+      </div>
+
+      <!-- Sidebar -->
+
+      <div class="sidebar ">
+        <div class="sidebar-heading list-group-item list-group-item-action" id="heading">{{sidebarTitle}}</div>
+        <div class="list-group list-group-flush">
+          <a *ngFor="let menusingle of navigationArray" href="{{menusingle.menulink}}"
+             class="list-group-item list-group-item-action">{{menusingle.menuname}}</a>
+         </div>
+     </div>
+
+  </div>
+
+
+    <!--Right part-->
+    
+    <div class="col-sm-10">
+      <div class="right">
+        <br />
+        <div class="center">
+          <h4>Booking Form</h4>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-sm-6">
+            <label class="col-sm-4">Function Type</label>
+            <p-dropdown [options]="functions" [(ngModel)]="selectFunction" placeholder="Select Function. . ." optionLabel="name" [showClear]="true"></p-dropdown>
+          </div>
+          <div class="col-sm-6">
+            <label class="col-sm-4">Venue Type</label>
+            <p-dropdown [options]="venue" [(ngModel)]="selectVenue" placeholder="Select Venue. . . " optionLabel="venue" [showClear]="true"></p-dropdown>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-sm-6">
+            <label class="col-sm-4">Date</label>
+            <p-calendar [(ngModel)]="date" [showIcon]="true" placeholder=" Choose Date . . ." inputId="icon"></p-calendar>
+          </div>
+          <div class="col-sm-6">
+            <label class="col-sm-4">Time</label>
+          
+            <p-calendar [(ngModel)]="date" [timeOnly]="true" placeholder=" From Time. . ." inputId="timeonly"></p-calendar>
+           <!-- <p-calendar [(ngModel)]="date" [timeOnly]="true" placeholder=" To Time. . ." inputId="timeonly"></p-calendar>
+                     -->
+              </div>
+        </div>
+
+        <br /><br />
+        <div class="center">
+          <h4>Contact Information  <div class="login"><a href="#" class="loginlink">Login </a>to get details</div></h4>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-sm-6">
+            <label class="col-sm-4">Company</label>
+            <input type="text" pInputText [(ngModel)]="companyname"  placeholder="Enter Comapany Name. . .">
+            <span class="p-ml-2">{{companyname}}</span>
+          </div>
+          <div class="col-sm-6">
+
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-sm-6">
+            <label class="col-sm-4">Name</label>
+            <input type="text" pInputText [(ngModel)]="representativename" placeholder="Representative Name. . .">
+            <span class="p-ml-2">{{representativename}}</span>
+          </div>
+          <div class="col-sm-6">
+            <label class="col-sm-4">Mobile</label>
+            <p-inputNumber [(ngModel)]="mobile" mode="decimal" inputId="withoutgrouping" [useGrouping]="false"  placeholder="Enter Mobile Number. . .">
+            </p-inputNumber>
+          </div>
+          <br />
+
+
+        </div>
+      </div>
+    </div>
+

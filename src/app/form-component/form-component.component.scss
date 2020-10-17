@@ -1,0 +1,19 @@
+.container-fluid {
+  color: #000066;
+  font-weight:500;
+}
+
+.center {
+  text-align: center;
+}
+.p-button-danger{
+    width:250px;
+}
+
+.img-fluid {
+  width: 100%;
+  }
+
+:host ::ng-deep .p-inputNumber {
+  width: 130px;
+}

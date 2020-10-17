@@ -1,0 +1,95 @@
+<div class="container-fluid" *ngFor="let home of home">
+  <div class="row">
+    <div class="col-sm-8">
+
+      <!--Left Part-->
+      <br />
+      <div class="center">
+        <h4>Registration Form</h4>
+      </div>
+      <br /><br />
+      <div class="row">
+        <div class="col-sm-6">
+          <label class="col-sm-4">First Name*</label>
+          <input class="col-sm-8" type="text" pInputText [(ngModel)]="fname">
+          <span class="p-ml-2">{{firstname}}</span>
+        </div>
+        <div class="col-sm-6">
+          <label class="col-sm-4">Last Name*</label>
+          <input class="col-sm-8" type="text" pInputText [(ngModel)]="lname">
+          <span class="p-ml-2">{{lastname}}</span>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-sm-6">
+          <label class="col-sm-4">Email*</label>
+          <input class="col-sm-8" type="text" pInputText [(ngModel)]="email">
+          <span class="p-ml-2">{{email}}</span>
+        </div>
+        <div class="col-sm-6">
+          <label class="col-sm-4">Confirm Email*</label>
+          <input class="col-sm-8" type="text" pInputText [(ngModel)]="cemail">
+          <span class="p-ml-2">{{confirmemail}}</span>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-sm-6">
+          <label class="col-sm-4">Mobile*</label>
+          <p-inputNumber [(ngModel)]="mobile" mode="decimal" inputId="withoutgrouping" [useGrouping]="false"> </p-inputNumber>
+        </div>
+        <div class="col-sm-6">
+          <label class="col-sm-4">Last Name*</label>
+          <input class="col-sm-8" type="text" pInputText [(ngModel)]="l2name">
+          <span class="p-ml-2">{{lastname2}}</span>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <label class="col-sm-2">&nbsp;&nbsp;&nbsp;Activities*</label>
+        <p-pickList class="col-sm-10" [source]="sourceProducts" [target]="targetProducts" sourceHeader="Available" targetHeader="Selected" dragdrop="true"
+                    [responsive]="true" [sourceStyle]="{'height':'50px'}" [targetStyle]="{'height':'50px'}">
+          <ng-template let-product pTemplate="item">
+            <div class="product-item">
+
+            </div>
+          </ng-template>
+        </p-pickList>
+      </div>
+      <br />
+      <div class="center">
+        <button pButton type="button" label="Register" class="p-button-danger"></button>
+      </div>
+      <br />
+ </div>
+
+
+    <!--Right Part-->
+    <div class="col-sm-4">
+      <img class="img-fluid" src={{home.imgURL}} alt="image">
+      <br /><br />
+      <h5>Order Summary</h5>
+      <table class="table table-borderless">
+        <tr>
+          <td>Admission</td>
+          <td>FREE</td>
+          <td><p-dropdown [options]="objects" [(ngModel)]="selecteobject" placeholder="1" optionLabel="name" [showClear]="true"></p-dropdown></td>
+        </tr>
+
+        <tr>
+          <td colspan="2">Total</td>
+          <td>&#x20B9;{{amount}}</td>
+        </tr>
+        <tr>
+             <td colspan="2"></td>
+            <td><button pButton type="button" label="Book" class="p-button-danger"></button></td>
+        </tr>
+
+      </table>
+
+
+
+    </div>
+  </div>
+</div>
